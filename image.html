@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>下课搜跨域的五种方式 jstopng</title>
+	</head>
+	<body>
+		<img crossorigin="anonymous" src="img/icon.png"/>
+	</body>
+	<script type="text/javascript">
+		
+		
+
+		
+		//测试网速
+		var t=Date.now(),
+		   	image=new Image(),
+			size=52,
+			test=["0-200kb","200-400kb","400-600kb","600-800kb","800-1000kb"];
+			image.src="img/icon.png";
+			image.crossOrigin="anonymous";
+			image.onload=function(){
+				var d=Date.now(),
+					speed=Math.round(size*1000) / ( d-t );
+					console.log(speed);
+				var i=(speed > 0 && speed <= 200) ? 0 :
+	                  (speed > 200 && speed <= 400) ? 1 :
+	                  (speed > 400 && speed <= 600) ? 2 :
+	                  (speed > 600 && speed <= 800) ? 3 : 4;
+	            alert(test[i])  
+	                  
+			}
+		//js统计		navigator.sendBeacon('a.php');	
+		//图片上报数据
+		var img = new Image();
+		img.crossOrigin="anonymous";
+		img.src = "http://xxx.xxx/img.gif?a=1&b=2";
+	</script>
+</html>
